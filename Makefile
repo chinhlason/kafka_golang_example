@@ -1,5 +1,5 @@
 TOPIC = test
-HOST = kafka_test
+HOST = kafka_golang_example-kafka-1
 
 create:
 	docker exec -it $(HOST) kafka-topics --create --bootstrap-server localhost:29092 --replication-factor 1 --partitions 1 --topic $(TOPIC)
