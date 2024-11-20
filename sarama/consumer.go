@@ -9,12 +9,10 @@ import (
 
 type ConsumerGroupHandler struct{}
 
-// Setup được gọi khi consumer group khởi tạo
 func (h *ConsumerGroupHandler) Setup(sarama.ConsumerGroupSession) error {
 	return nil
 }
 
-// Cleanup được gọi khi consumer group đóng
 func (h *ConsumerGroupHandler) Cleanup(sarama.ConsumerGroupSession) error {
 	return nil
 }
@@ -47,7 +45,6 @@ func (h *ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession,
 		log.Printf("Message claimed: topic = %s, partition = %d, offset = %d, key = %s, value = %s\n",
 			msg.Topic, msg.Partition, msg.Offset, string(msg.Key), string(msg.Value))
 
-		// Đánh dấu message là đã xử lý
 		session.MarkMessage(msg, "")
 	}
 	return nil
