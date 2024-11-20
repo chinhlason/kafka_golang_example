@@ -1,4 +1,4 @@
-# Kafka with GO
+# Kafka with GO (Using Shopify/Sarama and Segmentio/Kafka-go)
 
 ## How to run this project
 
